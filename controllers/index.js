@@ -33,7 +33,7 @@ const  deletePokemon  = async (req,  res)  =>  {
 
 const getPokemonById = async (req, res) => {
   try {
-    const pokemon = await Pokemon.findByPk(req.params.id);
+    const pokemon = await models.pokemon.findByPk(req.params.id);
     if (!pokemon) {
       return res.status(404).json({ error: 'Pokémon no encontrado' });
     }
